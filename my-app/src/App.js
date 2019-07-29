@@ -1,8 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
-
 import axios from 'axios';
 
 function App() {
@@ -19,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      hi
+      Gotta catch 'em all!
     </div>
   );
 }
