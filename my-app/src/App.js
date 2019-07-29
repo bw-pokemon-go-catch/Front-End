@@ -5,6 +5,8 @@ import axios from 'axios';
 import LoginPage from './components/login';
 import SignupPage from './components/signup';
 import Header from './components/header';
+import AppRouter from './components/AppRouter';
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
 
@@ -29,6 +31,7 @@ function App() {
   }
 
   return (
+    <Router>
     <div className="App">
       <Header />
       Should I try to catch this Pokemon?
@@ -38,7 +41,9 @@ function App() {
       <br />
       <SignupPage />
       <LoginPage />
+      <AppRouter />
     </div>
+    </Router>
   );
 }
 
