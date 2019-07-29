@@ -20,29 +20,32 @@ const LoginPage = () => {
     setPassword('');
   }
 
-  return {
+  return (
     <div>
       <form onSubmit={event => handleLogin(event)}>
+        <br />
         <label>
-        Username:
         <input
           type='text'
           value={username}
           placeholder={'username'}
           onChange={event => handleUsername(event)}
+        />
         </label>
+        <br />
         <label>
-        Password:
         <input
           type='text'
           value={password}
           placeholder={'password'}
           onChange={event => handlePassword(event)}
+        />
         </label>
+        <br />
         <button>Login</button>
       </form>
     </div>
-  }
+  )
 }
 
 export default LoginPage;
