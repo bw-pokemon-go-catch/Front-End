@@ -4,6 +4,7 @@ import './App.css';
 import axios from 'axios';
 import LoginPage from './components/login';
 import SignupPage from './components/signup';
+import AppRouter from './components/AppRouter';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
       <br />
       <SignupPage />
       <LoginPage />
+      <AppRouter />
     </div>
   );
 }
