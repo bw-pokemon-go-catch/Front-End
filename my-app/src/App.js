@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
+import LoginPage from './components/login';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className="App">
       Gotta catch 'em all!
+      <LoginPage />
     </div>
   );
 }
