@@ -4,6 +4,7 @@ import './App.css';
 import axios from 'axios';
 import LoginPage from './components/login';
 import SignupPage from './components/signup';
+import Header from './components/header';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       Should I try to catch this Pokemon?
       <br />
       <form onSubmit={event => handleCalculation(event)}>
