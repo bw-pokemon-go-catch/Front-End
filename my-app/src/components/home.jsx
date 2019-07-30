@@ -6,12 +6,13 @@ const Home = () => {
   //hooks
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonCP, setPokemonCP] = useState("");
-  const [pokemonData, setPokemonData] = useState('');
-  const [pokemon, setPokemon] = useState('');
-  const [pokemonCPInput, setPokemonCPInput] = useState('');
+  const [pokemonData, setPokemonData] = useState("");
+  const [pokemon, setPokemon] = useState("");
+  const [pokemonCPInput, setPokemonCPInput] = useState("");
 
   useEffect(() => {
-    axios.get("https://pokemon-go-bw-backend.herokuapp.com/pokemon")
+    axios
+      .get("https://pokemon-go-bw-backend.herokuapp.com/pokemon")
       .then(response => {
         console.log(response);
         setPokemonData(response.data);
@@ -24,7 +25,6 @@ const Home = () => {
   //event handlers
   const handlePokemonName = event => {
     setPokemonName(event.target.value);
-
   };
   const handlePokemonCP = event => {
     setPokemonCP(event.target.value);
@@ -34,9 +34,11 @@ const Home = () => {
 
     setPokemonCPInput(pokemonCP);
 
-    setPokemon(pokemonData.filter(item => {
-      return item.Name === pokemonName;
-    })[0]);
+    setPokemon(
+      pokemonData.filter(item => {
+        return item.Name === pokemonName;
+      })[0]
+    );
 
     setPokemonName("");
     setPokemonCP("");
@@ -44,7 +46,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h4>Should you catch this Pokemon?</h4>
+      <h4 className="question">Should you catch this Pokemon?</h4>
 
       <form onSubmit={event => handleCalculation(event)}>
         <br />
@@ -77,7 +79,7 @@ const Home = () => {
           <div>
             Should you catch this pokemon?
             <br />
-            {((pokemon.MaxCP * 0.8) <= pokemonCPInput) ? "Yes!" : "Not recommended"}
+            {pokemon.MaxCP * 0.8 <= pokemonCPInput ? "Yes!" : "Not recommended"}
           </div>
         </div>
       </div>
