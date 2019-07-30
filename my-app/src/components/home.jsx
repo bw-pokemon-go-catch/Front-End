@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import PokemonList from './PokemonList';
 
 const Home = () => {
 
@@ -11,6 +12,7 @@ const Home = () => {
   const [pokemonImg, setPokemonImg] = useState('');
   const [responseData, setResponseData] = useState('');
   const [yesOrNo, setYesOrNo] = useState('');
+  const [pokemonListData, setPokemonListData] = useState('');
 
   useEffect( () => {
     axios.get('https://pokemon-go-bw-backend.herokuapp.com/pokemon')
@@ -18,6 +20,7 @@ const Home = () => {
         console.log(response)
         console.log(response.data[0]['MaxCP'])
         console.log(response.data[0].Name)
+        setPokemonListData(response);
         setResponseData(response);
       })
       .catch( error => {
@@ -46,10 +49,11 @@ const Home = () => {
     setPokemonName('');
     setPokemonCP('');
   }
-
+  
   return (
     <div className='home'>
       <h4>Should you catch this Pokemon?</h4>
+      <PokemonList pokemonData={pokemonListData} />
       <form onSubmit={event => handleCalculation(event)}>
         <br />
         <label>
