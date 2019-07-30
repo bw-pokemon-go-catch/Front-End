@@ -10,7 +10,3 @@ ReactDOM.render(
   </Router>,
   document.getElementById("root")
 );
-
-RegExp.escape = function(s) {
-  return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
-};

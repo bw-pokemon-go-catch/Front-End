@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 // import PokemonList from './PokemonList';
-import HomePage from "./home/home";
 
 const Home = () => {
   //hooks
@@ -53,7 +52,7 @@ const Home = () => {
   return (
     <div className="home">
       <h4>Should you catch this Pokemon?</h4>
-      <HomePage />
+
       <form onSubmit={event => handleCalculation(event)}>
         <br />
         <label>
