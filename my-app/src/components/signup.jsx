@@ -5,7 +5,7 @@ import Mewtwo from "../Images/mewtwo.jpg";
 import Butterfree from "../Images/butterfree.jpg";
 import Lugia from "../Images/lugia.jpg";
 
-const SignupPage = () => {
+const SignupPage = (props) => {
   //hooks
   const [createUsername, setCreateUsername] = useState("");
   const [createPassword, setCreatePassword] = useState("");
@@ -25,6 +25,7 @@ const SignupPage = () => {
     event.preventDefault();
     setCreateUsername("");
     setCreatePassword("");
+    props.history.push('/login');
   };
 
   return (
@@ -64,12 +65,12 @@ const SignupPage = () => {
         </form>
       </div>
       <div className="leftImagesSignUp">
-        <img src={Mewtwo} />
-        <img src={Lugia} />
+        <img src={Mewtwo} alt='mewtwo' />
+        <img src={Lugia} alt='lugia' />
       </div>
       <div className="rightImagesSignUp">
-        <img src={Charizard} />
-        <img src={Butterfree} />
+        <img src={Charizard} alt='charizard' />
+        <img src={Butterfree} alt='butterfree' />
       </div>
     </div>
   );

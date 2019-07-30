@@ -1,27 +1,20 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-// import PokemonList from './PokemonList';
 
 const Home = () => {
   //hooks
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonCP, setPokemonCP] = useState("");
-  const [pokemonCPTemp, setPokemonCPTemp] = useState("");
-  const [pokemonImg, setPokemonImg] = useState("");
-  const [responseData, setResponseData] = useState("");
-  const [yesOrNo, setYesOrNo] = useState("");
-  const [pokemonListData, setPokemonListData] = useState("");
+  const [pokemonData, setPokemonData] = useState('');
+  const [pokemon, setPokemon] = useState('');
+  const [pokemonCPInput, setPokemonCPInput] = useState('');
 
   useEffect(() => {
-    axios
-      .get("https://pokemon-go-bw-backend.herokuapp.com/pokemon")
+    axios.get("https://pokemon-go-bw-backend.herokuapp.com/pokemon")
       .then(response => {
         console.log(response);
-        console.log(response.data[0]["MaxCP"]);
-        console.log(response.data[0].Name);
-        setPokemonListData(response);
-        setResponseData(response);
+        setPokemonData(response.data);
       })
       .catch(error => {
         console.log(error);
@@ -31,20 +24,20 @@ const Home = () => {
   //event handlers
   const handlePokemonName = event => {
     setPokemonName(event.target.value);
+
   };
   const handlePokemonCP = event => {
     setPokemonCP(event.target.value);
   };
   const handleCalculation = event => {
     event.preventDefault();
-    console.log(pokemonName);
-    console.log(responseData.data[pokemonName]);
-    setResponseData(responseData.data[pokemonName]);
-    setPokemonImg(responseData.data[pokemonName].ImageURL);
-    setPokemonCPTemp(pokemonCP);
-    if (responseData.data[pokemonName].MaxCP * 0.8 <= pokemonCP) {
-      setYesOrNo("Yes!");
-    } else setYesOrNo("Not recommended");
+
+    setPokemonCPInput(pokemonCP);
+
+    setPokemon(pokemonData.filter(item => {
+      return item.Name === pokemonName;
+    })[0]);
+
     setPokemonName("");
     setPokemonCP("");
   };
@@ -59,7 +52,7 @@ const Home = () => {
           <input
             type="text"
             value={pokemonName}
-            placeholder={"Enter Pokemon Number"}
+            placeholder={"Enter Pokemon Name"}
             onChange={event => handlePokemonName(event)}
           />
         </label>
@@ -75,15 +68,16 @@ const Home = () => {
         <br />
         <button className="actionButton">Calculate</button>
       </form>
+
       <div className="output">
-        <img src={pokemonImg} alt="pokemon" />
+        <img src={pokemon.ImageURL} alt="pokemon" />
         <div className="textOutput">
-          <div>Your pokemon's CP: {pokemonCPTemp}</div>
-          <div>Pokemon's Max CP: {responseData.MaxCP}</div>
+          <div>Your pokemon's CP: {pokemonCPInput}</div>
+          <div>Pokemon's Max CP: {pokemon.MaxCP}</div>
           <div>
             Should you catch this pokemon?
             <br />
-            {yesOrNo}
+            {((pokemon.MaxCP * 0.8) <= pokemonCPInput) ? "Yes!" : "Not recommended"}
           </div>
         </div>
       </div>
