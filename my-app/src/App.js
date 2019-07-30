@@ -7,6 +7,7 @@ import SignupPage from './components/signup';
 import Header from './components/header';
 import AppRouter from './components/AppRouter';
 import { BrowserRouter as Router } from "react-router-dom";
+import NavBar from './components/NavBar'
 
 function App() {
 
@@ -33,15 +34,16 @@ function App() {
   return (
     <Router>
     <div className="App">
+      <NavBar />
       <Header />
-      Should I try to catch this Pokemon?
+     <p className='question'>Should I try to catch this Pokemon?</p> 
       <br />
       <form onSubmit={event => handleCalculation(event)}>
       </form>
       <br />
       <SignupPage />
       <LoginPage />
-      <AppRouter />
+      {/* <AppRouter /> */}
     </div>
     </Router>
   );

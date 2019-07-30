@@ -1,3 +1,122 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+
+}
+
 .App {
   text-align: center;
+}
+
+.navBar {
+  background-color: black;
+  height: 60px;
+ 
+  width: 415px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftNav {
+ 
+  width: 100px;
+    display: inline-flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+.rightNav {
+ 
+  width: 190px;
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+.pokeballIMG {
+  width: 40px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
+.header {
+ 
+
+  margin: 0 auto;
+margin-top: -15px;
+ 
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+
+.question {
+  width: 310px;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 15px;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+.signUp {
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 360px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 5px black;
+  
+}
+
+.login {
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 360px;
+  margin: 0 auto;
+  padding: 10px;
+  box-shadow: 1px 1px 5px black;
+} 
+
+h4 {
+  font-size: 2.4rem;
+  margin: -5px;
+  margin: 0 auto;
+}
+
+input {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px;
+  
+  font-size: 1.7rem;
+  display: flex;
+  box-shadow: 1px 1px 5px black;
+  margin: 0 auto;
+}
+
+.actionButton {
+  border: 1px solid rgba(255, 0, 0, 0.897);
+  border-radius: 5px;
+  padding: 18px;
+  background-color: rgba(255, 0, 0, 0.788);
+  font-size: 1.4rem;
+  display: flex;
+  box-shadow: 1px 1px 5px black;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  color: white;
+  
 }

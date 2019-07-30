@@ -6,6 +6,7 @@ const SignupPage = () => {
   //hooks
   const [createUsername, setCreateUsername] = useState('');
   const [createPassword, setCreatePassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   //event handlers
   const handleCreateUsername = event => {
@@ -14,6 +15,9 @@ const SignupPage = () => {
   const handleCreatePassword = event => {
     setCreatePassword(event.target.value);
   }
+  const handleConfirmPassword = event => {
+    setConfirmPassword(event.target.value);
+  }
   const handleCreateAccount = event => {
     event.preventDefault();
     setCreateUsername('');
@@ -21,7 +25,8 @@ const SignupPage = () => {
   }
 
   return (
-    <div>
+    <div className='signUp'>
+      <h4>Sign Up</h4>
       <form onSubmit={event => handleCreateAccount(event)}>
         <br />
         <label>
@@ -42,7 +47,16 @@ const SignupPage = () => {
         />
         </label>
         <br />
-        <button>Create Account</button>
+        <label>
+        <input
+          type='text'
+          value={confirmPassword}
+          placeholder={'confirm password'}
+          onChange={event => handleConfirmPassword(event)}
+        />
+        </label>
+        <br />
+        <button className='actionButton'>Create Account</button>
       </form>
     </div>
   )

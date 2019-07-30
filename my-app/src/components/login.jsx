@@ -21,7 +21,8 @@ const LoginPage = () => {
   }
 
   return (
-    <div>
+    <div className='login'>
+      <h4>Login</h4>
       <form onSubmit={event => handleLogin(event)}>
         <br />
         <label>
@@ -42,7 +43,7 @@ const LoginPage = () => {
         />
         </label>
         <br />
-        <button>Login</button>
+        <button className='actionButton'>Login</button>
       </form>
     </div>
   )
