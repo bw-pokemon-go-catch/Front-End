@@ -1,6 +1,5 @@
 * {
-  font-family: 'Montserrat', sans-serif;
-
+  font-family: "Montserrat", sans-serif;
 }
 
 .App {
@@ -10,16 +9,15 @@
 .navBar {
   background-color: black;
   height: 60px;
- 
+
   width: 415px;
   display: flex;
   justify-content: space-between;
 }
 
 .leftNav {
- 
   width: 100px;
-    display: inline-flex;
+  display: inline-flex;
   align-content: center;
   align-items: center;
   justify-content: space-around;
@@ -28,7 +26,6 @@
 }
 
 .rightNav {
- 
   width: 190px;
   display: inline-flex;
   align-content: center;
@@ -47,20 +44,15 @@ a {
   text-decoration: none;
 }
 
-
-
 .header {
- 
-
   margin: 0 auto;
-margin-top: -15px;
- 
+  margin-top: -15px;
+
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
 }
-
 
 .question {
   width: 310px;
@@ -78,7 +70,6 @@ margin-top: -15px;
   padding: 10px;
   margin-bottom: 20px;
   box-shadow: 1px 1px 5px black;
-  
 }
 
 .login {
@@ -88,7 +79,7 @@ margin-top: -15px;
   margin: 0 auto;
   padding: 10px;
   box-shadow: 1px 1px 5px black;
-} 
+}
 
 h4 {
   font-size: 2.4rem;
@@ -100,7 +91,7 @@ input {
   border: 1px solid grey;
   border-radius: 5px;
   padding: 5px;
-  
+
   font-size: 1.7rem;
   display: flex;
   box-shadow: 1px 1px 5px black;
@@ -118,5 +109,107 @@ input {
   margin: 0 auto;
   margin-bottom: 10px;
   color: white;
-  
+  transition: 1s;
+}
+
+.actionButton:hover {
+  background-color: rgba(214, 0, 0, 0.788);
+  cursor: pointer;
+}
+
+.searchBar {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  transition: 1s;
+}
+
+.dropdown {
+  margin-bottom: 20px;
+}
+
+.output {
+  display: flex;
+  width: 800px;
+  margin: 0 auto;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.textOutput {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 25px;
+  justify-content: space-around;
+  height: 200px;
+  font-size: 1.5rem;
+  display: flex;
+  box-shadow: 1px 1px 5px black;
+}
+
+.output img {
+  width: 400px;
+}
+
+.search-container .title {
+  margin-top: 20px;
+}
+
+.leftImages {
+  display: flex;
+
+  margin-left: 70px;
+  flex-direction: column;
+  width: 500px;
+  margin-top: -360px;
+}
+
+.leftImages img {
+  width: 400px;
+}
+
+.rightImages {
+  display: flex;
+  height: 500px;
+  margin-left: 1070px;
+  flex-direction: column;
+  width: 500px;
+  margin-top: -660px;
+}
+
+.rightImages img {
+  width: 660px;
+}
+
+.leftImagesSignUp {
+  display: flex;
+
+  margin-left: 70px;
+  flex-direction: column;
+  width: 500px;
+  margin-top: -400px;
+}
+
+.leftImagesSignUp img {
+  width: 400px;
+}
+
+.rightImagesSignUp {
+  display: flex;
+  height: 500px;
+  margin-left: 1100px;
+  flex-direction: column;
+  width: 500px;
+  margin-top: -760px;
+}
+
+.rightImagesSignUp img {
+  width: 640px;
+}
+
+.leftNav link:hover {
+  color: crimson;
 }
