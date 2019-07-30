@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import PokemonList from './PokemonList';
+// import PokemonList from './PokemonList';
 
 const Home = () => {
 
@@ -49,11 +49,10 @@ const Home = () => {
     setPokemonName('');
     setPokemonCP('');
   }
-  
+
   return (
     <div className='home'>
       <h4>Should you catch this Pokemon?</h4>
-      <PokemonList pokemonData={pokemonListData} />
       <form onSubmit={event => handleCalculation(event)}>
         <br />
         <label>
