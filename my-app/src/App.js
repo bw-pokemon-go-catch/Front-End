@@ -5,7 +5,7 @@ import axios from 'axios';
 import LoginPage from './components/login';
 import SignupPage from './components/signup';
 import Header from './components/header';
-import AppRouter from './components/AppRouter';
+// import AppRouter from './components/AppRouter';
 import { BrowserRouter as Router } from "react-router-dom";
 import NavBar from './components/NavBar'
 
@@ -32,7 +32,7 @@ function App() {
   }
 
   return (
-    <Router>
+    
     <div className="App">
       <NavBar />
       <Header />
@@ -45,7 +45,7 @@ function App() {
       <LoginPage />
       {/* <AppRouter /> */}
     </div>
-    </Router>
+    
   );
 }
 
