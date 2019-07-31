@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Header />
-
+<div>Hello world!</div>
       <AppRouter />
     </div>
   );
