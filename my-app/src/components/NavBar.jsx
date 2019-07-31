@@ -8,12 +8,12 @@ function NavBar() {
     <div>
       <div className="navBar">
         <div className="leftNav">
-          <img className="pokeballIMG" src={Pokeball} alt="pokeball" />
+          <Link to="/"><img className="pokeballIMG" src={Pokeball} alt="pokeball" /></Link>
           <Link to="/">Home</Link>
         </div>
         <div className="rightNav">
-          <Link to="/signup/">Sign Up</Link>
-          <Link to="/login/">Login</Link>
+          <a href="https://worthymonadmin.netlify.com/">Sign Up</a>
+          <a href="https://worthymonadmin.netlify.com/">Login</a>
         </div>
       </div>
     </div>

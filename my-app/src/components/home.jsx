@@ -43,19 +43,18 @@ const Home = () => {
     setPokemonCPInput(pokemonCP);
     setPokeballsInput(pokeballs);
 
-    // pokemonName.split('');
-    // // pokemonName[0].toUpperCase();
-    // pokemonName.join('');
+    let pokemonNameCopy = pokemonName.toLowerCase();
+    pokemonNameCopy = pokemonNameCopy[0].toUpperCase() + pokemonNameCopy.slice(1, pokemonNameCopy.length);
 
     setPokemonImg(
       pokemonData.filter(item => {
-        return item.Name === pokemonName;
+        return item.Name === pokemonNameCopy;
       })[0].ImageURL
     );
 
     setPokemon(
       pokemonData.filter(item => {
-        return item.Name === pokemonName;
+        return item.Name === pokemonNameCopy;
       })[0]
     );
 
