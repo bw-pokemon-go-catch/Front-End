@@ -3,6 +3,9 @@ body {
   background-size: cover;
   background-attachment: fixed;
   font-family: "Montserrat", sans-serif;
+  max-width: 1000px;
+  margin: auto;
+  width: 100%;
 }
 
 .App {
@@ -15,7 +18,7 @@ body {
 
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .leftNav {
@@ -64,7 +67,7 @@ a:hover {
   align-items: center;
   font-size: 2rem;
   background-color: rgba(0, 0, 0, 0.719);
-  width: 700px;
+  width: 375px;
   box-shadow: 1px 1px 5px black;
   border-radius: 5px;
   margin-bottom: 20px;
@@ -82,13 +85,12 @@ a:hover {
 }
 
 .question {
-  width: 510px;
+  width: 375px;
   color: white;
   text-shadow: 2px 2px 1px black;
-
-  padding: 30px;
+  padding: 10px 30px;
   margin: 0 auto;
-  font-size: 1.6rem;
+  font-size: 1.25rem;
   background-color: rgba(0, 0, 0, 0.719);
   box-shadow: 1px 1px 5px black;
   border-radius: 5px;
@@ -97,7 +99,7 @@ a:hover {
 .signUp {
   border-radius: 5px;
   width: 360px;
-  margin: 0 auto;
+  margin: 30px auto;
   padding: 10px;
   margin-bottom: 20px;
   box-shadow: 1px 1px 5px black;
@@ -109,7 +111,7 @@ a:hover {
 .login {
   border-radius: 5px;
   width: 360px;
-  margin: 0 auto;
+  margin: 30px auto;
   padding: 10px;
   box-shadow: 1px 1px 5px black;
   background-color: rgba(0, 0, 0, 0.719);
@@ -125,7 +127,6 @@ h4 {
 
 input {
   border: 1px solid grey;
-
   border-radius: 5px;
   padding: 5px;
   background-color: rgba(255, 255, 255, 0.856);
@@ -166,9 +167,8 @@ input {
 
 .output {
   display: flex;
-  width: 800px;
-  margin: 0 auto;
-  padding: 50px;
+  width: 400px;
+  margin: 50px auto;
   justify-content: center;
   align-items: center;
 }
@@ -184,13 +184,14 @@ input {
   justify-content: space-around;
   height: 100%;
   width: 100%;
-  font-size: 1.3rem;
+  font-size: 1.0rem;
   display: flex;
   box-shadow: 1px 1px 5px black;
   background-color: rgba(0, 0, 0, 0.719);
   color: white;
   text-shadow: 2px 2px 1px black;
   align-content: space-around;
+  align-items: center;
 }
 
 .outputText {
@@ -199,8 +200,15 @@ input {
   justify-content: space-around;
 }
 
+.result {
+  color: lightgreen;
+  font-size: 1.2rem;
+}
+
 .textOutput img {
-  width: 160px;
+  width: 120px;
+  height: 120px;
+
 }
 
 .search-container .title {
@@ -233,52 +241,6 @@ input {
   width: 660px;
 }
 
-.leftImagesSignUp {
-  display: flex;
-
-  margin-left: 70px;
-  flex-direction: column;
-  width: 500px;
-  margin-top: -400px;
-}
-
-.leftImagesSignUp img {
-  width: 400px;
-}
-
-.rightImagesSignUp {
-  display: flex;
-  height: 500px;
-  margin-left: 1100px;
-  flex-direction: column;
-  width: 500px;
-  margin-top: -760px;
-}
-
-.rightImagesSignUp img {
-  width: 640px;
-}
-
 .leftNav link:hover {
   color: crimson;
-}
-
-@media (max-width: 880px) {
-  .header {
-    width: 75%;
-  }
-  .textOutput {
-    width: 50%;
-    margin-left: -140px;
-  }
-}
-
-@media (max-width: 620px) {
-  .question {
-    width: 75%;
-  }
-  .textOutput {
-    width: 50%;
-    margin-left: -420px;
-  }
 }

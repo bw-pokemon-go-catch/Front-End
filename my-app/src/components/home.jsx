@@ -1,14 +1,18 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Header from "./header";
 
 const Home = () => {
   //hooks
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonCP, setPokemonCP] = useState("");
+  const [pokeballs, setPokeballs] = useState("");
   const [pokemonData, setPokemonData] = useState("");
   const [pokemon, setPokemon] = useState("");
+  const [pokemonImg, setPokemonImg] = useState("");
   const [pokemonCPInput, setPokemonCPInput] = useState("");
+  const [pokeballsInput, setPokeballsInput] = useState("");
 
   useEffect(() => {
     axios
@@ -16,6 +20,7 @@ const Home = () => {
       .then(response => {
         console.log(response);
         setPokemonData(response.data);
+        setPokemonImg(response.data[Math.floor(Math.random() * Math.floor(response.data.length))].ImageURL)
       })
       .catch(error => {
         console.log(error);
@@ -29,10 +34,24 @@ const Home = () => {
   const handlePokemonCP = event => {
     setPokemonCP(event.target.value);
   };
+  const handlePokeballs = event => {
+    setPokeballs(event.target.value);
+  }
   const handleCalculation = event => {
     event.preventDefault();
 
     setPokemonCPInput(pokemonCP);
+    setPokeballsInput(pokeballs);
+
+    // pokemonName.split('');
+    // // pokemonName[0].toUpperCase();
+    // pokemonName.join('');
+
+    setPokemonImg(
+      pokemonData.filter(item => {
+        return item.Name === pokemonName;
+      })[0].ImageURL
+    );
 
     setPokemon(
       pokemonData.filter(item => {
@@ -42,13 +61,15 @@ const Home = () => {
 
     setPokemonName("");
     setPokemonCP("");
+    setPokeballs("");
   };
 
   return (
     <div className="home">
+      <Header />
       <h4 className="question">
-        Let us know what kind of Pokemon you found, it's CP, and the amount of
-        Pokeballs you have. And we will do the rest!
+        Let us know what kind of Pokemon you found, its CP, and the amount of
+        Pokeballs you have. We will tell you if it's worth your precious Pokeballs!
       </h4>
 
       <form onSubmit={event => handleCalculation(event)}>
@@ -74,9 +95,9 @@ const Home = () => {
         <label>
           <input
             type="text"
-            value={pokemonName}
-            placeholder={"Enter Pokeball Amount"}
-            onChange={event => handlePokemonName(event)}
+            value={pokeballs}
+            placeholder={"Enter # of Pokeballs"}
+            onChange={event => handlePokeballs(event)}
           />
         </label>
         <br />
@@ -85,16 +106,13 @@ const Home = () => {
 
       <div className="output">
         <div className="textOutput">
-          <img src={pokemon.ImageURL} alt="pokemon" />
+          <img src={pokemonImg} alt="pokemon" />
           <div className="outputText">
             <div>Your Pokemon's CP: {pokemonCPInput}</div>
             <div>Pokemon's Max CP: {pokemon.MaxCP}</div>
-            <div>Your Number of Pokeballs: {}</div>
-            <div>
-              Result:
-              <br />
-              {pokemon.MaxCP * 0.8 <= pokemonCPInput ? "Worthy!" : "Not Worthy"}
-            </div>
+            <div># of Pokeballs: {pokeballsInput}</div>
+            <br />
+            <div className='result'>Result: {pokemon === '' ? "" : (pokemon.MaxCP * 0.8 <= pokemonCPInput && pokeballsInput >= 5 ? "Worthy!" : "Not Worthy")}</div>
           </div>
         </div>
       </div>

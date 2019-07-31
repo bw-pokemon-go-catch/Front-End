@@ -1,9 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import Charizard from "../Images/charizard.jpg";
-import Mewtwo from "../Images/mewtwo.jpg";
-import Butterfree from "../Images/butterfree.jpg";
-import Lugia from "../Images/lugia.jpg";
 
 const LoginPage = props => {
   //hooks
