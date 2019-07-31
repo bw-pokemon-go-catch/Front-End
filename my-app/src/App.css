@@ -1,11 +1,8 @@
-* {
-  font-family: "Montserrat", sans-serif;
-}
-
 body {
   background-image: url(./Images/miles_pokemon_cinematic_universe_alyceatinoyan.0.jpg);
   background-size: cover;
   background-attachment: fixed;
+  font-family: "Montserrat", sans-serif;
 }
 
 .App {
@@ -16,7 +13,7 @@ body {
   background-color: rgba(0, 0, 0, 0.719);
   height: 60px;
 
-  width: 415px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -67,38 +64,53 @@ a {
   box-shadow: 1px 1px 5px black;
   border-radius: 5px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  height: 100px;
+  letter-spacing: 1px;
+}
+
+.header h1 {
+  font-family: "Saira Stencil One", cursive;
+  margin-bottom: -15px;
+  margin-top: -20px;
 }
 
 .question {
-  width: 310px;
+  width: 510px;
   color: white;
   text-shadow: 2px 2px 1px black;
 
-  padding: 20px;
+  padding: 30px;
   margin: 0 auto;
-  font-size: 2.5rem;
+  font-size: 1.6rem;
   background-color: rgba(0, 0, 0, 0.719);
   box-shadow: 1px 1px 5px black;
   border-radius: 5px;
 }
 
 .signUp {
-  border: 1px solid grey;
   border-radius: 5px;
   width: 360px;
   margin: 0 auto;
   padding: 10px;
   margin-bottom: 20px;
   box-shadow: 1px 1px 5px black;
+  background-color: rgba(0, 0, 0, 0.719);
+  color: white;
+  text-shadow: 2px 2px 1px black;
 }
 
 .login {
-  border: 1px solid grey;
   border-radius: 5px;
   width: 360px;
   margin: 0 auto;
   padding: 10px;
   box-shadow: 1px 1px 5px black;
+  background-color: rgba(0, 0, 0, 0.719);
+  color: white;
+  text-shadow: 2px 2px 1px black;
 }
 
 h4 {
@@ -160,22 +172,32 @@ input {
 .textOutput {
   display: flex;
   flex-direction: column;
-  margin: 50px;
+  /* margin: 50px; */
 
+  margin-top: -20px;
+  flex-direction: row;
   border-radius: 5px;
   padding: 25px;
   justify-content: space-around;
-  height: 200px;
+  height: 100%;
+  width: 100%;
   font-size: 1.5rem;
   display: flex;
   box-shadow: 1px 1px 5px black;
   background-color: rgba(0, 0, 0, 0.719);
   color: white;
   text-shadow: 2px 2px 1px black;
+  align-content: space-around;
 }
 
-.output img {
-  width: 400px;
+.outputText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.textOutput img {
+  width: 160px;
 }
 
 .search-container .title {
@@ -238,65 +260,22 @@ input {
   color: crimson;
 }
 
-@media (min-width: 1200px) {
-  .navBar {
-    width: 300px;
-  }
-
-  .leftNav {
-    margin-left: 40px;
-    padding: 20px;
-
-    justify-content: space-between;
-    width: 120px;
-  }
-
-  .rightNav {
-    margin-right: 40px;
-  }
-
-  a:hover {
-    color: rgba(255, 0, 0, 0.788);
-  }
-
-  .output {
-    height: 300px;
-  }
-}
-
-@media (min-width: 350px) {
-  .output {
-    flex-direction: column;
-    margin-left: -245px;
-  }
-
-  .output img {
-    width: 300px;
-  }
-
-  .textOutput {
-    width: 300px;
-  }
-
+@media (max-width: 880px) {
   .header {
-    width: 350px;
+    width: 75%;
+  }
+  .textOutput {
+    width: 50%;
+    margin-left: -140px;
   }
 }
 
-@media (min-width: 700px) {
-  .navBar {
-    width: 770px;
+@media (max-width: 620px) {
+  .question {
+    width: 75%;
   }
-  .output {
-    margin-left: -40px;
-  }
-}
-
-@media (min-width: 1000px) {
-  .navBar {
-    width: 1025px;
-  }
-  .output {
-    margin-left: -40px;
+  .textOutput {
+    width: 50%;
+    margin-left: -420px;
   }
 }

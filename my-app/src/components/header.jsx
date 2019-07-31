@@ -3,7 +3,8 @@ import React from "react";
 const Header = () => {
   return (
     <header className="header">
-      <h1>Pokemon Catch Calculator</h1>
+      <h1>Worthymon</h1>
+      <h4 className="statement">Should you catch this Pokemon?</h4>
     </header>
   );
 };

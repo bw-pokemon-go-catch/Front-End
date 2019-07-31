@@ -46,7 +46,10 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h4 className="question">Should you catch this Pokemon?</h4>
+      <h4 className="question">
+        Let us know what kind of Pokemon you found, it's CP, and the amount of
+        Pokeballs you have. And we will do the rest!
+      </h4>
 
       <form onSubmit={event => handleCalculation(event)}>
         <br />
@@ -72,14 +75,17 @@ const Home = () => {
       </form>
 
       <div className="output">
-        <img src={pokemon.ImageURL} alt="pokemon" />
         <div className="textOutput">
-          <div>Your pokemon's CP: {pokemonCPInput}</div>
-          <div>Pokemon's Max CP: {pokemon.MaxCP}</div>
-          <div>
-            Should you catch this pokemon?
-            <br />
-            {pokemon.MaxCP * 0.8 <= pokemonCPInput ? "Yes!" : "Not recommended"}
+          <img src={pokemon.ImageURL} alt="pokemon" />
+          <div className="outputText">
+            <div>Your Pokemon's CP: {pokemonCPInput}</div>
+            <div>Pokemon's Max CP: {pokemon.MaxCP}</div>
+            <div>Your Number of Pokeballs: {}</div>
+            <div>
+              Result:
+              <br />
+              {pokemon.MaxCP * 0.8 <= pokemonCPInput ? "Worthy!" : "Not Worthy"}
+            </div>
           </div>
         </div>
       </div>

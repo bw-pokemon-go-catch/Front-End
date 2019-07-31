@@ -5,7 +5,7 @@ import Mewtwo from "../Images/mewtwo.jpg";
 import Butterfree from "../Images/butterfree.jpg";
 import Lugia from "../Images/lugia.jpg";
 
-const LoginPage = ( props ) => {
+const LoginPage = props => {
   //hooks
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -21,7 +21,7 @@ const LoginPage = ( props ) => {
     event.preventDefault();
     setUsername("");
     setPassword("");
-    props.history.push('/');
+    props.history.push("/");
   };
 
   return (
@@ -51,14 +51,7 @@ const LoginPage = ( props ) => {
           <button className="actionButton">Login</button>
         </form>
       </div>
-      <div className="leftImages">
-        <img src={Mewtwo} alt='mewtwo' />
-        <img src={Lugia} alt='lugia' />
-      </div>
-      <div className="rightImages">
-        <img src={Charizard} alt='charizard' />
-        <img src={Butterfree} alt='butterfree' />
-      </div>
+
       <div />
     </div>
   );
