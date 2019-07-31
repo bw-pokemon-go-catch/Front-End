@@ -19,7 +19,7 @@ body {
 }
 
 .leftNav {
-  width: 100px;
+  width: 130px;
   display: inline-flex;
   align-content: center;
   align-items: center;
@@ -47,6 +47,10 @@ a {
 
   text-decoration: none;
   transition: 0.5s;
+}
+
+a:hover {
+  color: rgba(214, 0, 0, 0.788);
 }
 
 .header {
@@ -172,7 +176,6 @@ input {
 .textOutput {
   display: flex;
   flex-direction: column;
-  /* margin: 50px; */
 
   margin-top: -20px;
   flex-direction: row;
@@ -181,7 +184,7 @@ input {
   justify-content: space-around;
   height: 100%;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   display: flex;
   box-shadow: 1px 1px 5px black;
   background-color: rgba(0, 0, 0, 0.719);

@@ -71,6 +71,15 @@ const Home = () => {
           />
         </label>
         <br />
+        <label>
+          <input
+            type="text"
+            value={pokemonName}
+            placeholder={"Enter Pokeball Amount"}
+            onChange={event => handlePokemonName(event)}
+          />
+        </label>
+        <br />
         <button className="actionButton">Calculate</button>
       </form>
 
