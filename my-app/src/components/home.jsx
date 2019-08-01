@@ -41,7 +41,7 @@ const Home = () => {
     event.preventDefault();
 
     if(pokemonName === '' || pokemonCP === '' || pokeballs === ''){
-      return alert("Please enter inputs");
+      return alert("Please enter inputs.");
     }
 
     let pokemonNameCopy = pokemonName.toLowerCase();
@@ -51,15 +51,23 @@ const Home = () => {
     if(pokemonData.forEach(item => { if(item.Name === pokemonNameCopy){ counter++ }}));
 
     if(counter < 1){
-      return alert("That is not a Pokemon");
+      return alert("That is not a Pokemon.");
     }
 
     if(isNaN(pokemonCP) === true){
-      return alert("Please enter a valid CP number");
+      return alert("Please enter a valid CP value.");
     }
 
     if(isNaN(pokeballs) === true){
-      return alert("Please enter a valid number of Pokeballs");
+      return alert("Please enter a valid number of Pokeballs.");
+    }
+
+    if(pokemonCP < 1){
+      return alert("Please enter a positive CP value.");
+    }
+
+    if(pokeballs < 0){
+      return alert("Nice try. You can't have a negative number of Pokeballs.");
     }
 
     setPokemonCPInput(pokemonCP);
@@ -76,6 +84,10 @@ const Home = () => {
         return item.Name === pokemonNameCopy;
       })[0]
     );
+
+    if(pokemonData.filter(item => {return item.Name === pokemonNameCopy;})[0].MaxCP < pokemonCP){
+      alert("The CP value you entered is higher than the max potential CP of the Pokemon you entered.");
+    }
 
     setPokemonName("");
     setPokemonCP("");
