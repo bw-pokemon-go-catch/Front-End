@@ -62,8 +62,6 @@ const Home = () => {
       return alert("Please enter a valid number of Pokeballs");
     }
 
-    console.log(counter);
-
     setPokemonCPInput(pokemonCP);
     setPokeballsInput(pokeballs);
 
@@ -132,7 +130,7 @@ const Home = () => {
             <div>Pokemon's Max CP: {pokemon.MaxCP}</div>
             <div># of Pokeballs: {pokeballsInput}</div>
             <br />
-            <div className='result'>Result: {pokemon === '' ? "" : (pokemon.MaxCP * 0.8 <= pokemonCPInput && pokeballsInput >= 5 ? "Worthy!" : "Not Worthy")}</div>
+            <div className='result'>Result: {pokemon === '' ? "" : (pokemon.MaxCP * 0.8 <= pokemonCPInput && pokeballsInput >= 5 ? <span className='result-green'>Worthy!</span> : <span className='result-red'>Not Worthy</span>)}</div>
           </div>
         </div>
       </div>

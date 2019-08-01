@@ -207,7 +207,17 @@ input {
 }
 
 .result {
+  color: yellow;
+  font-size: 1.2rem;
+}
+
+.result-green {
   color: lightgreen;
+  font-size: 1.2rem;
+}
+
+.result-red {
+  color: #ff0000;
   font-size: 1.2rem;
 }
 
