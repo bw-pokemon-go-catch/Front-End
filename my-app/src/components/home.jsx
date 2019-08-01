@@ -40,11 +40,32 @@ const Home = () => {
   const handleCalculation = event => {
     event.preventDefault();
 
-    setPokemonCPInput(pokemonCP);
-    setPokeballsInput(pokeballs);
+    if(pokemonName === '' || pokemonCP === '' || pokeballs === ''){
+      return alert("Please enter inputs");
+    }
 
     let pokemonNameCopy = pokemonName.toLowerCase();
     pokemonNameCopy = pokemonNameCopy[0].toUpperCase() + pokemonNameCopy.slice(1, pokemonNameCopy.length);
+
+    let counter = 0;
+    if(pokemonData.forEach(item => { if(item.Name === pokemonNameCopy){ counter++ }}));
+
+    if(counter < 1){
+      return alert("That is not a Pokemon");
+    }
+
+    if(isNaN(pokemonCP) === true){
+      return alert("Please enter a valid CP number");
+    }
+
+    if(isNaN(pokeballs) === true){
+      return alert("Please enter a valid number of Pokeballs");
+    }
+
+    console.log(counter);
+
+    setPokemonCPInput(pokemonCP);
+    setPokeballsInput(pokeballs);
 
     setPokemonImg(
       pokemonData.filter(item => {
