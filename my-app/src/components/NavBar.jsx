@@ -12,8 +12,8 @@ function NavBar() {
           <Link to="/">Home</Link>
         </div>
         <div className="rightNav">
-          <a href="https://worthymonadmin.netlify.com/">Sign Up</a>
-          <a href="https://worthymonadmin.netlify.com/">Login</a>
+          <a href="https://worthymonadmin.netlify.com/register">Sign Up</a>
+          <a href="https://worthymonadmin.netlify.com/login">Login</a>
         </div>
       </div>
     </div>
